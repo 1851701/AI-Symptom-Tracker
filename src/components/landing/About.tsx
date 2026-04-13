@@ -10,10 +10,10 @@ export function About() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <FadeIn>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#2D5A27]">
               About CareBridge
             </p>
-            <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="mt-3 text-balance text-4xl font-black uppercase tracking-tight text-[#2D5A27] [font-stretch:condensed] sm:text-5xl">
               A patient experience platform built for real-world care.
             </h2>
             <p className="mt-5 text-pretty font-normal leading-relaxed text-slate-600">
@@ -28,10 +28,10 @@ export function About() {
           </FadeIn>
 
           <FadeIn delay={0.08}>
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="relative mx-auto max-w-sm lg:max-w-sm">
               <div
                 aria-hidden
-                className="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-sky-200/50 via-white to-slate-100 blur-xl"
+                className="absolute -inset-3 rounded-[2.5rem] bg-gradient-to-br from-[#2D5A27]/20 via-white to-slate-100 blur-xl"
               />
               <div className="relative overflow-hidden rounded-[2rem] shadow-[0_24px_60px_-28px_rgba(15,23,42,0.15)] ring-1 ring-slate-200/70">
                 <div className="relative aspect-[4/5] w-full sm:aspect-[5/6]">

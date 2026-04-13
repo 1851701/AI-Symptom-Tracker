@@ -36,19 +36,19 @@ export function HowItWorks() {
         <StaggerReveal className="mt-16 grid gap-6 lg:grid-cols-3 lg:gap-8">
           {steps.map((s) => (
             <StaggerItem key={s.step}>
-              <MotionCard className="flex h-full flex-col bg-gradient-to-b from-white to-slate-50/90 p-8 hover:border-sky-200/90">
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-sky-600">
+              <MotionCard className="flex h-full flex-col bg-gradient-to-b from-white to-[#2D5A27]/5 p-8 transition-all hover:border-[#2D5A27]/30 hover:shadow-lg hover:shadow-[#2D5A27]/5">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2D5A27]">
                   {s.step}
                 </span>
-                <h3 className="mt-4 text-xl font-semibold tracking-tight text-slate-900">
+                <h3 className="mt-4 text-xl font-bold uppercase tracking-tight text-[#2D5A27] [font-stretch:condensed]">
                   {s.title}
                 </h3>
-                <p className="mt-3 flex-1 text-base font-normal leading-relaxed text-slate-600">
+                <p className="mt-3 flex-1 text-base font-medium leading-relaxed text-[#2D5A27]/70">
                   {s.copy}
                 </p>
                 <div
                   aria-hidden
-                  className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-sky-200/80 to-transparent lg:hidden"
+                  className="mt-8 h-px w-full bg-gradient-to-r from-transparent via-[#2D5A27]/20 to-transparent lg:hidden"
                 />
               </MotionCard>
             </StaggerItem>
