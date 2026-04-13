@@ -62,7 +62,7 @@ export function Features() {
                 )} 
               />
               
-              <FadeIn delay={0.1} viewPortOnce>
+              <FadeIn delay={0.1}>
                 <div
                   className={cn(
                     "group grid items-center gap-16 lg:grid-cols-12 lg:gap-24",
