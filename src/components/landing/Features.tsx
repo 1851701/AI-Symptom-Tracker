@@ -54,8 +54,8 @@ export function Features() {
               >
                 {/* Visual Side */}
                 <div className="relative w-full lg:w-1/2">
-                  <div className="aspect-[16/10] overflow-hidden rounded-[2.5rem] bg-[#2D5A27]/5 p-2 ring-1 ring-[#2D5A27]/10 transition-all duration-500 group-hover:scale-[1.02] group-hover:ring-[#2D5A27]/20">
-                    <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
+                  <div className="aspect-[16/10] overflow-hidden bg-[#2D5A27]/5 transition-all duration-500 group-hover:scale-[1.02]">
+                    <div className="relative h-full w-full overflow-hidden">
                       <Image
                         src={`/feature-${i + 1}.png`}
                         alt={f.title}
@@ -66,14 +66,6 @@ export function Features() {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#2D5A27]/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     </div>
                   </div>
-                  {/* Decorative background element */}
-                  <div 
-                    aria-hidden 
-                    className={cn(
-                      "absolute -inset-4 -z-10 rounded-[3rem] bg-gradient-to-br from-[#2D5A27]/10 via-transparent to-transparent blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-60",
-                      i % 2 !== 0 && "from-transparent to-[#2D5A27]/10"
-                    )} 
-                  />
                 </div>
 
                 {/* Content Side */}
