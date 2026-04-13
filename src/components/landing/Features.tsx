@@ -33,67 +33,90 @@ const features: {
 
 export function Features() {
   return (
-    <section id="features" className="scroll-mt-24 py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section id="features" className="scroll-mt-24 py-32 sm:py-48">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <SectionHeading
-            eyebrow="Key capabilities"
-            title="Everything in one focused platform"
-            description="CareBridge brings tracking and guidance together—designed to fit naturally into your daily life."
-          />
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+            <div className="max-w-2xl">
+              <p className="text-xs font-black uppercase tracking-[0.4em] text-[#2D5A27]">
+                Modern Care Systems
+              </p>
+              <h2 className="mt-6 text-balance text-5xl font-black uppercase leading-[0.9] tracking-tighter text-[#2D5A27] [font-stretch:condensed] sm:text-7xl">
+                Everything in one focused platform
+              </h2>
+            </div>
+            <p className="mt-8 max-w-md text-pretty text-lg font-medium leading-relaxed text-[#2D5A27]/60 lg:mt-0">
+              CareBridge combines clinical precision with an editorial design focus—bringing intelligence and clarity to every health interaction.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="mt-20 flex flex-col gap-16 lg:gap-24">
+        <div className="mt-32 flex flex-col gap-32 lg:gap-56">
           {features.map((f, i) => (
-            <FadeIn key={f.title} delay={i * 0.1}>
-              <div
+            <div key={f.title} className="relative">
+              {/* Background accent line or element */}
+              <div 
                 className={cn(
-                  "group relative flex flex-col items-center gap-12 lg:flex-row lg:gap-20",
-                  i % 2 !== 0 && "lg:flex-row-reverse"
-                )}
-              >
-                {/* Visual Side */}
-                <div className="relative w-full lg:w-1/2">
-                  <div className="aspect-[16/10] overflow-hidden rounded-[2.5rem] bg-[#2D5A27]/5 p-2 ring-1 ring-[#2D5A27]/10 transition-all duration-500 group-hover:scale-[1.02] group-hover:ring-[#2D5A27]/20">
-                    <div className="relative h-full w-full overflow-hidden rounded-[2rem]">
+                  "absolute -top-16 block h-px w-24 bg-[#2D5A27]/20",
+                  i % 2 === 0 ? "left-0" : "right-0"
+                )} 
+              />
+              
+              <FadeIn delay={0.1} viewPortOnce>
+                <div
+                  className={cn(
+                    "group grid items-center gap-16 lg:grid-cols-12 lg:gap-24",
+                    i % 2 !== 0 && "lg:direction-reverse"
+                  )}
+                >
+                  {/* Visual Side */}
+                  <div className={cn(
+                    "lg:col-span-7",
+                    i % 2 !== 0 ? "lg:order-2" : "lg:order-1"
+                  )}>
+                    <div className="relative aspect-[16/11] overflow-hidden bg-[#2D5A27]/5 transition-all duration-700 group-hover:bg-[#2D5A27]/10">
                       <Image
                         src={`/feature-${i + 1}.png`}
                         alt={f.title}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                        sizes="(max-width: 1024px) 100vw, 560px"
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 100vw, 800px"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#2D5A27]/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#2D5A27]/10 via-transparent to-transparent mix-blend-multiply transition-opacity group-hover:opacity-60" />
                     </div>
                   </div>
-                  {/* Decorative background element */}
-                  <div 
-                    aria-hidden 
-                    className={cn(
-                      "absolute -inset-4 -z-10 rounded-[3rem] bg-gradient-to-br from-[#2D5A27]/10 via-transparent to-transparent blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-60",
-                      i % 2 !== 0 && "from-transparent to-[#2D5A27]/10"
-                    )} 
-                  />
-                </div>
 
-                {/* Content Side */}
-                <div className="flex w-full flex-col lg:w-1/2">
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-[1.25rem] bg-[#2D5A27]/5 text-[#2D5A27] transition-all duration-300 group-hover:bg-[#2D5A27] group-hover:text-white group-hover:shadow-xl group-hover:shadow-[#2D5A27]/20">
-                    <span className="text-lg font-black">{i + 1}</span>
-                  </div>
-                  <h3 className="text-3xl font-black uppercase tracking-tight text-[#2D5A27] [font-stretch:condensed] sm:text-4xl">
-                    {f.title}
-                  </h3>
-                  <p className="mt-6 text-pretty text-lg font-medium leading-relaxed text-[#2D5A27]/70 lg:text-xl">
-                    {f.body}
-                  </p>
-                  <div className="mt-10 flex items-center gap-4 text-xs font-black uppercase tracking-[0.2em] text-[#2D5A27]">
-                    <div className="h-px flex-1 bg-[#2D5A27]/20" />
-                    <span>Capability {i + 1}</span>
+                  {/* Content Side */}
+                  <div className={cn(
+                    "lg:col-span-5",
+                    i % 2 !== 0 ? "lg:order-1" : "lg:order-2"
+                  )}>
+                    <div className={cn(
+                      "flex flex-col",
+                      i % 2 !== 0 ? "lg:items-end lg:text-right" : ""
+                    )}>
+                      <span className="text-4xl font-black text-[#2D5A27]/10 [font-stretch:condensed]">
+                        0{i + 1}
+                      </span>
+                      <h3 className="mt-4 text-3xl font-black uppercase tracking-tight text-[#2D5A27] [font-stretch:condensed] sm:text-5xl">
+                        {f.title}
+                      </h3>
+                      <p className="mt-8 text-pretty text-xl font-medium leading-relaxed text-[#2D5A27]/70">
+                        {f.body}
+                      </p>
+                      
+                      <div className={cn(
+                        "mt-12 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-[#2D5A27]/40",
+                        i % 2 !== 0 ? "flex-row-reverse" : ""
+                      )}>
+                        <div className="h-px w-12 bg-[#2D5A27]/20" />
+                        <span>System Capability</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           ))}
         </div>
       </div>
