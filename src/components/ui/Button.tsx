@@ -15,6 +15,8 @@ const variants = {
     "border border-white/10 bg-white text-slate-900 shadow-lg shadow-slate-900/20 hover:bg-sky-50 hover:shadow-xl focus-visible:outline-white",
   onDarkSecondary:
     "border border-white/45 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 focus-visible:outline-white",
+  minimal:
+    "focus-visible:outline-white",
 } as const;
 
 export type ButtonVariant = keyof typeof variants;
